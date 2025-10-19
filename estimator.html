@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Estimator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">BrickEstimator</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="estimator.html">Estimator</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Construction Cost Estimator</h1>
+        <p>Enter your details to calculate total construction cost.</p>
+    </header>
+
+    <section class="calculator">
+        <form id="costForm">
+            <label for="area">House Area (sq.ft):</label>
+            <input type="number" id="area" required>
+
+            <label for="brickType">Select Brick Type:</label>
+            <select id="brickType">
+                <option value="5">Standard Brick - ₹5/brick</option>
+                <option value="6">Premium Brick - ₹6/brick</option>
+                <option value="7">High Quality Brick - ₹7/brick</option>
+            </select>
+
+            <label for="bricksPerSqFt">Bricks per sq.ft:</label>
+            <input type="number" id="bricksPerSqFt" value="50" required>
+
+            <label for="laborCost">Labor Cost per sq.ft (₹):</label>
+            <input type="number" id="laborCost" required>
+
+            <label for="cementCost">Cement Cost per sq.ft (₹):</label>
+            <input type="number" id="cementCost" required>
+
+            <label for="steelCost">Steel Cost per sq.ft (₹):</label>
+            <input type="number" id="steelCost" required>
+
+            <label for="sandCost">Sand Cost per sq.ft (₹):</label>
+            <input type="number" id="sandCost" required>
+
+            <button type="submit" class="btn">Calculate Cost</button>
+        </form>
+
+        <div id="result">
+            <h2>Total Estimated Cost: ₹<span id="totalCost">0</span></h2>
+            <canvas id="costChart" width="400" height="200"></canvas>
+            <button id="downloadBtn" class="btn">Download PDF</button>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Brick by Brick Estimator
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="estimator.js"></script>
+</body>
+</html>
